@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ordenador en Serie - Julio Laveriano Portilla</title>
+	<meta name="author" content="Julio Laveriano">
+	<link rel="stylesheet" href="css/foundation.css">
+	<link rel="stylesheet" href="css/foundation-icons.css">
+	<link rel="stylesheet" href="css/app.css">
+	<script src="js/angular-1.6.1.min.js"></script>
+	<script src="js/script.js"></script>
+</head>
+<body ng-app="AppOrdenando">
+<div class="top-bar" id="realEstateMenu">
+	<div class="top-bar-left">
+		<ul class="menu accordion-menu" data-responsive-menu="accordion" role="tablist" aria-multiselectable="true" data-accordionmenu="kn48ig-accordionmenu" data-responsivemenu="pz8374-responsivemenu">
+			<li class="menu-text" role="menuitem">DesaFrontend</li>
+		</ul>
+	</div>
+	<div class="top-bar-right">
+		<ul class="menu">
+		<li><a href="https://www.facebook.com/julio.laveriano" target="_blank"><i class="fi-social-facebook"></i> Facebook</a></li>
+		<li><a href="https://twitter.com/JalpMi" target="_blank"><i class="fi-social-twitter"></i> Twitter</a></li>
+		</ul>
+	</div>
+</div>
+<div class="container">
+	<div ng-controller="DesaCtrl">
+		<div class="row">
+			<div class="medium-12 large-8 columns">
+				<h1>Desafío Frontend</h1>
+				<p class="subheader">
+					Ordenador en serie de números enteros.
+				</p>
+			</div>
+			<div class="medium-6 show-for-large large-4 columns">
+				<img src="images/desafio.jpg" alt="desafio">
+			</div>
+		</div>
+		<div class="row">
+			<fieldset class="large-6 columns">
+				<legend>Mantenimiento</legend>
+				<button class="hollow button primary" ng-click="defecto()">Valores por defecto</button>
+				<button class="hollow button primary" ng-click="limpiar()">Limpiar</button>
+			</fieldset>
+			<fieldset class="large-6 columns text-right">
+				<legend>Ordenamiento en serie</legend>
+				<button class="hollow button secondary" ng-click="ordenarYA()">Ordenar Ascendentemente YA!</button>
+				<button class="hollow button secondary" ng-click="ordenarPorPosicion()">Ordenar por posición</button>
+			</fieldset>
+		</div>
+		<div class="row">
+			<div class="small-6 large-12 columns">
+				<form ng-submit="agregarNumero()">
+					<div class="input-group">
+						<span class="input-group-label">#</span>
+						<input class="input-group-field" type="number" ng-model="numEntero" min='1' required>
+						<div class="input-group-button">
+							<input type="submit" class="button success" value="Agregar">
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="row">
+			<div class="small-12 large-12 columns">
+				<div class="callout">
+					<ul class="list-group num">
+						<li ng-repeat="valNum in valDefault" class="valor list-group-item {{ marcarPos($index) }}">
+							{{ valNum }}
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+<script src="js/vendor/jquery.js"></script>
+<script src="js/vendor/what-input.js"></script>
+<script src="js/vendor/foundation.js"></script>
+</div>
+</body>
+</html>
